@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+
+    <!-- 
+        조건문
+        = 주어진 조건에 따라 실행되는 조건문
+        = 조건이 참일 때 실행되는 코드 블록을 작성
+        = 조건이 거짓일 때 실행되는 코드 블록을 작성할 수도 있음
+
+        1) if ~ else 문
+        = 조건이 참일 때 실행되는 코드와 거짓일 때 실행되는 코드를 각각 작성할 수 있다.
+        = 조건이 참,거짓 2개이다   
+    
+        if(조건){
+            조건이 참일때 실행
+            거짓 이면 다음 else 문으로 넘어감
+        }else{
+            조건이 거짓일 때 실행
+            마지막 조건
+        }
+
+        2) if ~ else if ~ else 문
+
+        if(조건){
+            조건이 참일때 실행
+            거짓 이면 다음 else if 문으로 넘어감
+        }else if(조건){
+            조건이 참일때 실행
+            거짓 이면 다음 else 문으로 넘어감
+        }else{
+            조건이 거짓일 때 실행
+            마지막 조건
+        }
+    -->
+
+    <script>
+        // let a = 25;
+        // let b = 40;
+
+        // if(a < b){
+        //     console.log('true');
+        // }else{
+        //     console.log('false');
+        // }
+
+
+        // let age = prompt('나이를 입력하세요');
+
+        // if(age > 19){
+        //     console.log('성인입니다')
+        // }else if(age < 19 && age >= 13){
+        //     console.log('청소년입니다')
+        // }else{
+        //     console.log('어린이입니다')
+        // }
+
+        let age = Number(prompt('나이를 입력하세여'));
+
+        if(age > 19){
+            alert('성인')
+        }else if(age <= 19 && age >= 14){
+            alert('학생')
+        }else{
+            alert('어린이')
+        }
+    </script>
+    
+</body>
+</html>

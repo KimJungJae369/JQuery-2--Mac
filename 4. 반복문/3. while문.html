@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while문</title>
+</head>
+<body>
+
+    <!-- 
+        while문
+        = 문법
+            while(반복조건){
+                반복처리 내용
+            }
+        = 특정 조건이 '참'인 동안 코드 블록을 실행하는 반복문
+        = 조건이 '거짓'이 되면  반복이 종료
+        = 횟수가 정해져 있지 않거나 조건에 따라 반복이 필요할 때 유용
+        = 'do..while문'과 함께 사용하여 최소 1회는 실행되도록 할 수 있다.
+        = do..while문법
+            do {
+                반복처리 내용
+            } while(반복조건);
+    -->
+
+    <script>
+        // 0 ~ 5까지 출력
+        // let count = 0;
+        // while (count < 5) {
+        //     console.log("현재 카운트:", count);
+        //     count++;
+        // }
+
+        // let num = 0;
+        // while(num <= 5){
+        //     document.write(num)
+        //     num++;
+        // }
+
+        // do while문
+        // let count = 0;
+        // do {
+        //     console.log("현재 카운트:", count);
+        //     count++;
+        // } while (count < 5);
+
+        let num = 0;
+        do{
+            document.write(num);
+            num++;
+        }while(num <= 5)
+    </script>
+    
+</body>
+</html>

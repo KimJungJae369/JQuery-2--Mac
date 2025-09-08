@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩 for문</title>
+</head>
+<body>
+
+    <!-- 
+        중첩 for문
+        = 부모 'for문'이 한 번 출력될 때 자식 'for문'이 한 사이클 실행
+        = 자식 'for문'이 모두 실행된 후에야 부모 'for문'의 다음 사이클로 넘어감
+
+        ex)
+        for(let i = 0; i < 5; i++){
+            for(let j = 0; j < 5; j++){
+                console.log(`i: ${i}, j: ${j}`);
+            }
+        }
+    -->
+
+    <script>
+        // 1. 부모태그 안에 자식 태그
+        // for(let i = 1; i <= 5; i++){
+        //     document.write('<h1>' + i + '</h1>');
+        //     for(let n = 6; n <= 8; n++){
+        //         document.write(n + '<br>')
+        //     }
+        // }
+
+        // for(let i = 1; i <= 5; i++){
+        //     document.write('<h1>' + i + '단 </h1>')
+        //     for(let n = 6; n <= 8; n++){
+        //         document.write(n)
+        //     }
+        // }
+
+
+        // // 2. 삼각형
+        // for(let i = 1; i <= 5; i++){
+        //     for(let n = 1; n <= i; n++){
+        //         document.write('*');
+        //     }
+        //     document.write('<br>');  
+        // }
+
+        // for(let i = 1; i <= 5; i++){
+        //     for(let n = 1; n <= i; n++){
+        //         document.write('*')
+        //     }
+        //     document.write('<br>')
+        // }
+        
+
+        // 3. 사각형
+        // for(let i = 1; i <= 5; i++){
+        //     for(let n = 1; n <=5; n++){
+        //         document.write('*');
+        //     }
+        //     document.write('<br>');
+        // }
+
+        // for(let i = 1; i <= 5; i++){
+        //     for(let n = 1; n <= 5; n++){
+        //         document.write('*')
+        //     }
+        //     document.write('<br>')
+        // }
+
+
+        // 4. 구구단
+        // for(let i = 2; i <= 9; i++){
+        //     document.write(i + '단 <br>')
+        //     for(let n = 1; n <= 9; n++){
+        //         document.write(i + 'X' + n + '=' + (i * n) + '<br>')
+        //     }
+        // }
+
+        for(let i = 2; i < 9; i++){
+            document.write('<b>' + i + '</b>' + '단 <br>')
+            for(let n = 1; n <= 9; n++){
+                document.write(i + 'X' + n + '=' + (i * n) + '<br>')
+            }
+        }
+    </script>
+    
+</body>
+</html>
