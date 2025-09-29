@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리란</title>
+    <script src="js.js"></script>
+</head>
+<body>
+
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+
+    <script>
+        $('.box').css({
+            width : 300,
+            height : 300,
+            backgroundColor : 'orange',
+            color : '#fff',
+            boredrRadius : '50%',
+            float : 'left',
+            font : '80px/300px ""',
+            position : 'relative',
+            textAlign : 'center',
+        });
+
+        $('.box:nth-child(1)').css({
+            float : 'none',
+            margin : '0 auto',
+        });
+
+        $('.box:nth-child(2)').css({
+            left : '50%',
+            marginLeft : '-330px',
+        });
+
+        $('.box:nth-child(3)').css({
+            left : '50%',
+            marginLeft : '30px',
+        });
+    </script>
+
+    <!-- 
+        <jQuery>
+        = js 라이브러리 중 하나
+        = js 보다 쉽게 코딩할 수 있도록 많은 양의 코딩을 줄여서 구현한 함수의 집합체
+        = js로 구현할 수 있는 모든 기능을 구현해 놓음
+
+        <jQuery 파일 적용 위치>
+        = 'style'을 먼저 읽고 난 다음에 'jQuery' 라이브러리 순서
+        = 반드시 제이쿼리 라이브러리 스크립트가 최상단에 위치
+        = jQuery 라이브러리 스크립트가 먼저 로드되어야 jQuery로 코딩한 스크립트가 오류없이 실행됨
+
+        <특징>
+        = 자바스크립트에서 여러 명령을 함수화 시켜서 만들어진 함수의 라이브러리 형태 언어
+        = jQuery를 사용하면 복잡한 DOM 조작을 간단하게 처리할 수 있음
+
+        <작성법 비교>
+        - js -
+        window.onload() = function(){
+            code
+        }
+
+        - jQuery -
+        $(document).ready(function(){
+            code
+        })
+
+        <jQuery 선택자>
+        = $('선택자').기능()
+
+        1. 기능
+        = 이벤트 형태 : function()
+        = 속성 : {}
+        = 단순 명령시간 : (시간 또는 명령값)
+
+        2. jQuery 표기법
+        = 문자로 인식 : ''
+        = 카멜케이스 : backgroundColor
+
+        3. 선택자
+        = 태그선택자 : $('태그명')
+        = 아이디선택자 : $('#아이디명')         
+        = 클래스선택자 : $('.클래스명')
+        = css선택자 모두 사용 가능
+
+        4. css속성 : 스타일 속성을 넣어주는 명령
+        $(선택자).css({
+            '속성명' : '속성값',
+            '속성명' : '속성값'
+        });
+
+        <요소 선택자 부모요소 선택자>
+        = $('선탯자').parent().명령;
+
+        = 자식요소 선택자
+        = $('선택자').children().명령;
+
+        = 전후요소 선택자
+        = $('선택자').prev().명령;
+        = $('선택자').next().명령;
+
+        = 첫번째 자식(:first-child)
+        = $('부모선택자').children().first().명령;
+        = $('부모선택자').children(':first').명령;
+
+        = 마지막 자식(:last-child)
+        = $('부모선택자').children().last().명령;
+        = $('부모선택자').children(':last').명령;
+    -->
+    
+</body>
+</html>
