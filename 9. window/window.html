@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+
+    <!-- 
+        window객체
+        = 웹 브라우저에 대한 선택자 
+        = 'window' 선택자의 경우 따옴표를 사용하지 않는다
+        = 브라우저의 너비, 높이, 스크롤바 위치 등 다양한 정보를 제공
+        = 브라우저의 크기가 변경되었을 때 이벤트를 감지하는데 사용
+        = 브라우저의 크기가 변경되었을 때마다 특정 함수를 실행
+            ex)
+                $(window).resize(function(){
+                    // 실행할 코드
+                });         
+    -->
+
+    <div id="box">
+        <div class="box"></div>
+    </div>
+
+    <script>
+        let ww = $(window).width(); // 브라우저의 너비
+        let wh = $(window).height(); // 브라우저의 높이
+
+        $('#box').css({
+            width : ww,
+            height : wh,
+            backgroundColor : 'yellow',
+        });
+
+        function Color(){
+            if($(window).width() < 600){ // 브라우저의 너비가 600px보다 작으면
+                $('#box').css({backgroundColor : 'pink'});
+            }else{
+                $('#box').css({backgroundColor : 'yellow'});
+            }
+        }
+
+        Color();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animate</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+
+    <!-- 
+        animate
+        = 시간에 따른 움직임 또는 애니메이션 작업시 사용
+        = jQuery에서 제공하는 메서드
+        = 선택한 요소의 CSS 속성을 변경하여 애니메이션 효과를 구현
+        = 기본적으로 jQuery의 animate() 메서드는 수치 값이 있는 CSS 속성에만 적용 가능
+            ex) width, height, opacity, margin, padding 등
+            
+        = animate() 메서드의 기본 구문
+            $(선택자).animate({속성:값, 속성:값, ...}, 지속시간, 콜백함수);
+        = 지속시간 : 애니메이션이 완료되는 데 걸리는 시간 (밀리초 단위)
+        = 콜백함수 : 애니메이션이 완료된 후 실행할 함수 (선택 사항)
+
+        <애니메이트 적용 속성>
+        1. width, height : 요소의 너비와 높이 변경
+        2. margin, padding : 요소의 여백과 안쪽 여백 변경
+        3. left, top, right, bottom : 요소의 위치 변경
+        4. opacity : 요소의 투명도 변경
+        5. scrollTop, scrollLeft : 스크롤 위치 변경
+    -->
+
+    <div id="box"></div>
+
+    <script>
+        $('#box').css({
+            width : 300,
+            height : 300,
+            backgroundColor : 'blue',
+            position : 'relative',
+        });
+
+        $('#box').animate({
+            width : '50%',
+            height : '50%',
+        }, 1500, function(){
+            $(this).animate({
+                marginLeft : '25%',
+                padding : 100,
+            }, 2000, function(){
+                $(this).animate({
+                    opacity : 1,
+                    top : 0,
+                    left : 0,
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
