@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+
+    <!-- 
+        이벤트(제이쿼리)
+        = 사용자가 윈도우 영역 마우스 또는 키보드와 같은 입력 장치로 동작을 하면 결과를 실행하는 명령어
+        = 이벤트 종류
+        1. 마우스 이벤트
+            - click : 마우스 클릭 시
+            - dblclick : 마우스 더블 클릭 시        
+            - mouseenter : 마우스가 요소에 진입할 때
+            - mouseleave : 마우스가 요소에서 벗어날 때
+            - mouseover : 마우스가 요소 위에 있을 때
+            - mouseout : 마우스가 요소 밖으로 벗어날 때
+            - mousedown : 마우스 버튼을 누를 때
+            - mouseup : 마우스 버튼에서 손을 뗄 때
+        2. 키보드 이벤트
+            - keydown : 키보드 키를 누를 때
+            - keyup : 키보드 키에서 손을 뗄 때                  
+            - keypress : 키보드 키를 누르고 있을 때 
+        3. 폼 이벤트
+            - focus : 폼 요소에 포커스가 갔을 때
+            - blur : 폼 요소에서 포커스가 벗어났을 때
+            - change : 폼 요소의 값이 변경되었을 때
+            - submit : 폼이 전송될 때
+        4. 윈도우 이벤트
+            - load : 문서가 로드되었을 때
+            - resize : 윈도우 크기가 변경되었을 때
+            - scroll : 윈도우에 스크롤이 발생했을 때            
+        = 이벤트 메서드 형식
+            $(선택자).이벤트명(함수);
+    -->
+    <div class="box"></div>
+
+    <script>
+        $(document).ready(function(){
+            $('.box').css({
+                width : 300,
+                height : 300,
+                backgroundColor : 'black',
+            });
+
+            $('.box').mousedown(function(){
+                $(this).css({
+                    backgroundColor : 'red',
+                });
+            });
+        });
+    </script>
+</body>
+</html>
