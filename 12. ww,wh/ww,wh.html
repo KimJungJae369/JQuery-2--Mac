@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ww,wh</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        #wrap{
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        section{
+            position: relative;
+        }
+
+        .con{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+
+        .btn{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+
+    <!-- 
+        ww(윈도우 가로),wh(윈도우 세로) 변수지정
+        = 윈도우의 가로,세로 크기를 실시간으로 파악할 수 있는 변수
+        = $(window).width() : 윈도우 가로 크기 파악
+        = $(window).height() : 윈도우 세로 크기 파악
+        = 변수지정 방법
+            var ww = $(window).width();
+            var wh = $(window).height();
+    -->
+
+    <div id="wrap">
+        <section>
+            <div class="con">
+                <div class="btn" id="btn1">▼</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="con">
+                <div class="btn" id="btn2">▼</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="con">
+                <div class="btn" id="btn3">▼</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="con">
+                <div class="btn" id="btn4">MOVE</div>
+            </div>
+        </section>
+    </div>
+    
+
+    <script>
+        $(document).ready(function(){
+            let ww = $(window).width();
+            let wh = $(window).height();
+            let bg = ['gold', 'tan', 'brown', 'tomato'];
+
+            $('#wrap').css({
+                width : ww,
+                height : wh * 4,
+            });
+
+            $('section').css({
+                width : ww,
+                height : wh,
+                backgroundColor : function(i){
+                    return bg[i]
+                }
+            });
+
+            $('.con').css({
+                width : ww * 0.8,
+                height : wh * 0.8,
+                backgroundColor : 'white',
+                marginTop : -(wh * 0.8) / 2,
+                marginLeft : -(ww * 0.8) / 2,
+            });
+
+            $('.btn').css({
+                width : ww * 0.1,
+                height : wh * 0.1,
+                backgroundColor : 'lightgray',
+                color : 'black',
+                cursor: 'pointer',
+                marginTop : -(wh * 0.1) / 2,
+                marginLeft : -(ww * 0.1) / 2,
+                textAlign : 'center',
+                lineHeight : wh * 0.1 + 'px',
+            });
+
+            $('#btn1').click(function(){
+                $('#wrap').animate({
+                    top : -wh,
+                });
+            });
+
+            $('#btn2').click(function(){
+                $('#wrap').animate({
+                    top : -wh * 2,
+                });
+            });
+
+            $('#btn3').click(function(){
+                $('#wrap').animate({
+                    top : -wh * 3,
+                });
+            });
+
+            $('#btn4').click(function(){
+                $('#wrap').animate({
+                    top : 0,
+                });
+            });
+        });
+    </script>
+</body>
+</html>
