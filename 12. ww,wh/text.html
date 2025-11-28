@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text</title>
+    <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            
+            #wrap {
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            section {
+                position: relative;
+            }
+
+            .btn {
+                position: absolute;
+            }
+
+            .left {
+                left: 50%;
+            }
+
+            #top_center, #center_bottom {
+                bottom: 0;
+            }
+
+            #center_top, #bottom_center {
+                top: 0;
+            }
+
+            .top {
+                top: 50%;
+            }
+
+            #left_center, #center_right {
+                right: 0;
+            }
+
+            #center_left, #right_center{
+                left: 0;
+            }
+
+    </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+        <div id="wrap">
+            <section id="top_wrap">
+                <h1 class="btn left" id="top_center">Go down</h1>
+            </section>
+
+
+
+            <div id="middle_wrap">
+                <section>
+                    <h1 class="btn top" id="left_center">Go right</h1>
+                </section>
+                
+
+                <section>
+                    <h1 class="btn left" id="center_top">Go top</h1>
+                    <h1 class="btn top" id="center_right">Go right</h1>
+                    <h1 class="btn left" id="center_bottom">Go down</h1>
+                    <h1 class="btn top" id="center_left">Go left</h1>
+                </section>
+
+                <section>
+                    <h1 class="btn top" id="right_center">Go left</h1>
+                </section>
+            </div>
+
+
+
+            <section id="bottom_wrap">
+                <h1 class="btn left" id="bottom_center">Go top</h1>
+            </section>
+        </div>
+
+
+    <script>
+        $(document).ready(function(){
+            let ww = $(window).width();
+            let wh = $(window).height();
+            let bg = ['skyblue', 'tomato', 'teal', 'pink', 'lightsalmon'];
+
+        $('#wrap').css({
+                    width: ww*3,
+                    height: wh*3,
+                    backgroundColor: 'lightgrey',
+                    top: -wh,
+                    left: -ww,
+                });
+
+
+                $('section').css({
+                    width: ww,
+                    height: wh,
+                    backgroundColor: function(i) {
+                        return bg[i];
+                    }
+                });
+
+                $('#middle_wrap').css({
+                    width: ww*3,
+                    height: wh,
+                });
+
+                $('#middle_wrap section').css({
+                    float: 'left',
+                });
+
+                $('#top_wrap, #bottom_wrap').css({
+                    left: ww,
+                });
+
+                $('.btn').css({
+                    width: ww*0.1,
+                    height: wh*0.1,
+                    backgroundColor: 'darkgray',
+                    color: 'white',
+                    textAlign: 'center',
+                    lineHeight: wh*0.1 + 'px',
+                });
+
+                $('.left').css({
+                    marginLeft: -(ww*0.1) / 2,
+                });
+
+
+                $('.top').css({
+                    marginTop: -(ww*0.1) / 2,
+                });
+
+                // event
+
+                // top
+                $('#center_top').click(function(){
+                    $('#wrap').animate({
+                        top : 0,
+                    });
+                })
+
+                $('#top_center').click(function(){
+                    $('#wrap').animate({
+                        top : -wh,
+                    });
+                })
+
+                // right
+                $('#center_right').click(function(){
+                    $('#wrap').animate({
+                        left : -ww * 2,
+                    });
+                })
+
+                $('#right_center').click(function(){
+                    $('#wrap').animate({
+                        left : -ww,
+                    });
+                })
+
+                // bottom
+                $('#center_bottom').click(function(){
+                    $('#wrap').animate({
+                        top : -wh * 2,
+                    });
+                })
+
+                $('#bottom_center').click(function(){
+                    $('#wrap').animate({
+                        top : -wh,
+                    });
+                })
+
+                // left
+                $('#center_left').click(function(){
+                    $('#wrap').animate({
+                        left : 0,
+                    });
+                });
+
+                $('#left_center').click(function(){
+                    $('#wrap').animate({
+                        left : -ww,
+                    });
+                });
+        });
+    </script>
+    
+</body>
+</html>
