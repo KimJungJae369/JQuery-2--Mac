@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr()</title>
+    <style>
+        img{
+            width: 400px;
+        }
+    </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+
+    <!-- 
+        attr()
+        = 태그의 속성을 추가/ 제거할때 사용
+        = 각 태그에 지정되는 속성만 사용 가능
+        = 선택자.attr("속성명", "속성값")
+        = 선택자.attr("속성명")  -> 속성값 반환
+
+        removeAttr()
+        = 추가 또는 기존에 있던 속성에 삭제할 때 사용
+        = 선택자.removeAttr("속성명")
+    -->
+
+    <div id="con">
+        <img src="https://cdn.pixabay.com/photo/2025/03/18/17/08/dog-9478504_1280.jpg" alt="img">
+    </div>
+
+    <div class="box1"></div>
+    <div class="box2" id="box"></div>
+
+    <script>
+        $(document).ready(function(){
+            // $('#con').css({
+            //     width : 400,
+            //     height : 400,
+            // });
+
+            // $('#con').hover(function(){
+            //     $('img').attr({
+            //         src : "https://cdn.pixabay.com/photo/2016/02/26/16/32/bulldog-1224267_1280.jpg",
+            //     });
+            // })
+
+            $('.box1').css({
+                width : 300,
+                height : 300,
+                backgroundColor : 'gray',
+                border : '5px solid black',
+            });
+
+            $('.box2').css({
+                width : 300,
+                height : 300,
+                backgroundColor : 'lightgray',
+                border : '5px solid red',
+            });
+
+            $('.box1').removeAttr('style'); // 'style' 속성 제거
+            $('.box2').removeAttr('id'); // 'id' 속성 제거
+        })
+    </script>
+    
+</body>
+</html>
