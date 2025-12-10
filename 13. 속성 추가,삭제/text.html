@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #wrap{
+            width: 600px;
+            height: 300px;
+            border: 1px solid gray;
+            margin: 50px auto;
+        }
+
+        #con{
+            width: 600px;
+            height: 200px;
+            position: relative;
+        }
+
+        .cirlie{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: gold;
+        }
+
+        #btn{
+            width: 600px;
+            height: 100px;
+            text-align: center;
+            cursor: pointer;
+            background-color: blue;
+            line-height: 100px;
+            color: wheat;
+        }
+    </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="con">
+            <div class="cirlie"></div>
+        </div>
+        <h1 id="btn">click</h1>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            let cw = $('.cirlie').width();
+            let a = 0;
+
+            $('#btn').click(function(){
+                if(a === 0){
+                    $('.cirlie').animate({
+                        left : cw,
+                    }, 1000);
+                    a++;
+                }else if(a === 1){
+                    $('.cirlie').animate({
+                        left : cw * 2,
+                    }, 1000);
+                    a++;
+                }else if(a === 2){
+                    $('.cirlie').animate({
+                        left : 0
+                    }, 1000);
+
+                    a = 0;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
