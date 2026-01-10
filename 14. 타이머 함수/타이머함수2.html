@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: black;
+        }
+
+        .number{
+            width: 150px;
+            height: 150px;
+            margin: 500px auto;
+            box-shadow: 0 0 20px white;
+            font-size: 100px;
+            line-height: 160px;
+            text-align: center;
+            list-style: none;
+            color: #333;
+            border-radius: 50%;
+            text-shadow: 0 0 10px white;
+        }
+    </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+
+    <div class="number">0</div>
+
+    <!-- 
+        .text()
+        = 선택자에 텍스트를 입력하는 명령어
+        = html요소의 텍스트를 콘텐츠를 가져오거나 설정
+        = html 태그를 텍스트를 간주하면 html 구조는 반영되지 않는다
+        = $('선택자').text() : 선택자의 텍스트 콘텐츠를 가져옴
+        = $('선택자').text('텍스트') : 선택자의 텍스트 콘텐츠를 설정
+        = html()과의 차이점은 html()은 html 태그를 인식하지만 text()는 html 태그를 인식하지 않는다
+    -->
+
+    <script>
+        $(document).ready(function(){
+            let num = 0;
+            let count_id = setInterval(function(){
+                num++;
+
+                if(num > 60){
+                    clearInterval(count_id)
+                }else{
+                    $('.number').text(num);
+                }
+            }, 100)
+        });
+    </script>
+    
+</body>
+</html>
