@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. 자동 순서 변경</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        #con_wrap {
+            width: 1000px;
+            height: 200px;
+            border: 10px solid violet;
+            margin: 100px auto;
+            background-color: lightgray;
+            /* overflow: hidden; */
+        }
+
+        #con_wrap li {
+            width: 200px;
+            height: 200px;
+            float: left;
+            text-align: center;
+            font: 900 60px/200px '';
+        }
+        
+    </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+
+    <ul id="con_wrap">
+        <li>1</li>
+        <li><span>2</span></li>
+        <li><a href="#">3</a></li>
+        <li><span>4</span></li>
+        <li class="five">5</li>
+    </ul>
+
+    <!-- 
+        <이동하는 명령어>
+        1. appenTo()
+        $('선택자').appendTo('이동할 선택자')
+        = 선택자의 요소를 다른 선택자의 마지막 자식 요소로 이동
+        = '선택자'를 '이동할 선택자' 안에서 뒤쪽으로 이동
+
+        2. prependTo()
+        $('선택자').prependTo('이동할 선택자')
+        = 선택자의 요소를 다른 선택자의 첫 번째 자식 요소로 이동
+        = '선택자'를 '이동할 선택자' 안에서 앞쪽으로 이동
+
+        3. insertAfter()
+        $('선택자').insertAfter('이동할 선택자')
+        = 선택자의 요소를 다른 선택자 뒤로 이동
+        = '선택자'를 '이동할 선택자' 뒤로 이동
+
+        4. insertBefore()
+        $('선택자').insertBefore('이동할 선택자')
+        = 선택자의 요소를 다른 선택자 앞로 이동
+        = '선택자'를 '이동할 선택자' 앞로 이동
+    -->
+
+    <script>
+        $(document).ready(function(){
+            var bg = ['red', 'orange', 'green', 'yellowgreen', 'blue'];
+
+            // 변수에 순서에 맞게 배경색상을 넣어주는 함수
+            $('#con_wrap li').css({
+                backgroundColor: function (index) {
+                    return bg[index];
+                }
+            });
+
+            // 1초마다 순서대로 뒤로 보내기
+            var st = setInterval(function(){
+                $('#con_wrap li').eq(0).appendTo('#con_wrap');
+                // .eq(0) : n번째를 선택한다/ 순서를 선택할 수 있는 것 css에서 'nth-child()'같은 존재/ 0부터 시작
+            }, 1000);
+
+            // 자동으로 순서 변경
+            $('#con_wrap').hover(function(){
+                clearInterval(st);
+            }, function(){
+                st = setInterval(function(){
+                    $('#con_wrap li').eq(4).prependTo('#con_wrap');
+                }, 1000);
+
+                setInterval(function(){
+                    clearInterval(st);
+                }, 5000);
+                });
+            });
+            
+    </script>
+    
+</body>
+</html>
