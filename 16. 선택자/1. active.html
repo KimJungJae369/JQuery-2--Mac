@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>active</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box{
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+
+        .remove{
+            border: 10px solid black;
+        }
+
+        .active{
+            background-color: rgb(94, 30, 23);
+            margin-left: 300px;
+        }
+
+    </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+
+    <!-- 
+        1. <.addClass()>
+        $('선택자').addClass('클래스명')
+        = css에서 지정된 클래스 스타일의 속성값을 추가
+        = 클래스명 앞에 점(.)을 적지 않는다
+
+        2. <.removeClass()>
+        $('선택자').removeClass('클래스명')
+        = 추가된 클래스 또는 기존에 지정된 클래스 속상값 제거
+        = 클래스명 앞에 점(.)을 적지 않는다
+
+        3. <.toggleClass()>
+        $('선택자').toggleClass('클래스명')
+        = 지정된 클래스 속성이 있으면 제거 없으면 추가
+        = 클래스명 앞에 점(.)을 적지 않는다
+    -->
+
+    <div id="box" class="remove"></div>
+
+    <script>
+        $(document).ready(function(){
+            $('#box').click(function(){
+                $(this).addClass('active');
+            }).dbclick(function(){
+                $(this).removeClass('active');
+            })
+        });
+    </script>
+    
+</body>
+</html>
